@@ -1,0 +1,3 @@
+snakefood==1.4
+-e git://github.com/nias-r/gitmanager.git#egg=gitmanager
+virtualenvwrapper==4.7.2
