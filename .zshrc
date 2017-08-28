@@ -15,7 +15,7 @@ export PATH="$PATH:$GOPATH/bin"
 source /Users/nias/scripts/helpful.sh
 source /Users/nias/scripts/bindkeys.sh
 source /Users/nias/scripts/tinycareterm.sh
-source /usr/local/share/antigen.zsh
+source /Users/nias/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -45,3 +45,4 @@ if [ -z ${TMUX+x} ]
 		gim | lolcat
 fi	
 
+export PATH="/usr/local/sbin:$PATH"
