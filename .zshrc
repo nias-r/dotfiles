@@ -1,8 +1,6 @@
 export EDITOR=vim
 export DEFAULT_USER=richardnias
 
-export PATH="$PATH:$HOME/scripts/bin"
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -10,12 +8,12 @@ export NVM_DIR="/Users/nias/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export GOPATH="/Users/nias/.go"
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin"
 
 source /Users/nias/scripts/helpful.sh
 source /Users/nias/scripts/bindkeys.sh
 source /Users/nias/scripts/tinycareterm.sh
-source /Users/nias/antigen.zsh
+source /Users/nias/.antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -44,5 +42,3 @@ if [ -z ${TMUX+x} ]
 	else
 		gim | lolcat
 fi	
-
-export PATH="/usr/local/sbin:$PATH"
