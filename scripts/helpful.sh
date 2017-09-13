@@ -6,4 +6,4 @@ function findHere()
 }
 alias find-here=findHere
 alias google='source ~/scripts/other/google.sh'
-
+alias pjson='python3 -m json.tool'
