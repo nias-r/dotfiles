@@ -1,16 +1,19 @@
 export EDITOR=vim
 export DEFAULT_USER=richardnias
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [[ -o login ]]; then
+	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export NVM_DIR="/Users/nias/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+	export NVM_DIR="/Users/nias/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export GOPATH="/Users/nias/.go"
-export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.6/bin"
-
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+	export GOPATH="/Users/nias/.go"
+	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.6/bin:/Users/nias/.local/bin"
+	
+	export WORKON_HOME=~/.virtualenvs
+	export VIRTUALENVWRAPPER_PYTHON="/Users/nias/.local/venvs/virtualenvwrapper/bin/python"
+fi
 
 source /Users/nias/scripts/helpful.sh
 source /Users/nias/scripts/bindkeys.sh
@@ -38,21 +41,14 @@ antigen apply
 export RPROMPT='%F{black}%K{green}%D %*%k%f'
 eval "$(thefuck --alias)"
 
-# if [ -z ${VSCODE+x} ]
-#	then
-		export DEFAULT_TMUX_SESSION="general"
-#	else
-#		export DEFAULT_TMUX_SESSION="vscode"
-#	fi
-
-if [ -z ${TMUX+x} ] 
-	then
-		tmux new-session -A -s ${DEFAULT_TMUX_SESSION}
-	else
+if [ -z ${TMUX+x} ]                        
+then
+	echo "〰〰〰〰〰〰〰〰〰〰〰〰〰"
+else 
+	if [[ -o login ]]; then
 		gim
+	fi
 fi
-	
-source /usr/local/bin/virtualenvwrapper.sh
 
 eval "$(direnv hook zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -63,3 +59,9 @@ source /Users/nias/google-cloud-sdk/path.zsh.inc
 
 # aws
 source /usr/local/bin/aws_zsh_completer.sh
+
+# virtualenvwrapper
+source /Users/nias/.local/bin/virtualenvwrapper.sh 
+
+# pipenv
+PIPENV_SHELL_FANCY=true
