@@ -1,5 +1,7 @@
-export EDITOR=vim
+export EDITOR=/usr/local/bin/vim
 export DEFAULT_USER=richardnias
+
+alias vim=/usr/local/bin/vim
 
 if [[ -o login ]]; then
 	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -8,9 +10,10 @@ if [[ -o login ]]; then
 	export NVM_DIR="/Users/nias/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-	export GOPATH="/Users/nias/.go"
+	export GOPATH="/usr/local/go"
 	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.6/bin:/Users/nias/.local/bin"
-	
+	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
 	export WORKON_HOME=~/.virtualenvs
 	export VIRTUALENVWRAPPER_PYTHON="/Users/nias/.local/venvs/virtualenvwrapper/bin/python"
 fi
@@ -58,10 +61,21 @@ source /Users/nias/google-cloud-sdk/completion.zsh.inc
 source /Users/nias/google-cloud-sdk/path.zsh.inc
 
 # aws
-source /usr/local/bin/aws_zsh_completer.sh
+source $HOME/.local/bin/aws_zsh_completer.sh
 
 # virtualenvwrapper
 source /Users/nias/.local/bin/virtualenvwrapper.sh 
 
 # pipenv
 PIPENV_SHELL_FANCY=true
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+alias manage="python stash-web/manage.py"
+source ~/.cargo/env
+
+# OPAM configuration
+. /Users/nias/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# GPG config
+export GPG_TTY=$(tty)

@@ -5,6 +5,7 @@ syntax on
 set number
 set rtp+=~/.vim/bundle/Vundle.vim
 set laststatus=2
+
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -16,6 +17,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -39,4 +41,4 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 set encoding=utf-8
-
+set tabstop=4
