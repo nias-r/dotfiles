@@ -18,9 +18,9 @@ if [[ -o login ]]; then
 	export VIRTUALENVWRAPPER_PYTHON="/Users/nias/.local/venvs/virtualenvwrapper/bin/python"
 fi
 
-source /Users/nias/scripts/helpful.sh
-source /Users/nias/scripts/bindkeys.sh
-source /Users/nias/scripts/tinycareterm.sh
+source /Users/nias/dotfiles/scripts/helpful.sh
+source /Users/nias/dotfiles/scripts/bindkeys.sh
+source /Users/nias/dotfiles/scripts/tinycareterm.sh
 source /Users/nias/.antigen.zsh
 
 antigen use oh-my-zsh
@@ -41,7 +41,6 @@ antigen bundle nias-r/pure
 
 antigen apply
 
-export RPROMPT='%F{black}%K{green}%D %*%k%f'
 eval "$(thefuck --alias)"
 
 if [ -z ${TMUX+x} ]                        
