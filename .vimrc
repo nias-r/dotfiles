@@ -28,7 +28,6 @@ let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#whitespace#checks = [ 'indent' ]
 
-
 let g:ctrlp_map = '<c-p>'
 
 nnoremap <C-J> <C-W><C-J>

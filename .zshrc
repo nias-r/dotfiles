@@ -1,9 +1,12 @@
-export EDITOR=/usr/local/bin/vim
-export DEFAULT_USER=richardnias
-
-alias vim=/usr/local/bin/vim
+if [ -z ${TMUX+x} ]                        
+then
+	echo "〰〰〰〰〰〰〰〰〰〰〰〰〰"
+	tmux new-session -A -s general
+	exit 0
+fi
 
 if [[ -o login ]]; then
+	gim
 	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -11,11 +14,19 @@ if [[ -o login ]]; then
 	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 	export GOPATH="/usr/local/go"
-	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.6/bin:/Users/nias/.local/bin"
+	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.7/bin:/Users/nias/.local/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 	export WORKON_HOME=~/.virtualenvs
 	export VIRTUALENVWRAPPER_PYTHON="/Users/nias/.local/venvs/virtualenvwrapper/bin/python"
+fi
+
+export EDITOR=/usr/local/bin/vim
+export DEFAULT_USER=richardnias
+
+alias vim=/usr/local/bin/vim
+
+if [[ -o login ]]; then
 fi
 
 source /Users/nias/dotfiles/scripts/helpful.sh
@@ -32,6 +43,7 @@ antigen bundle command-not-found
 antigen bundle peterhurford/git-it-on.zsh
 antigen bundle andrewferrier/fzf-z
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 antigen bundle vasyharan/zsh-brew-services
 antigen bundle lukechilds/zsh-better-npm-completion
@@ -42,15 +54,6 @@ antigen bundle nias-r/pure
 antigen apply
 
 eval "$(thefuck --alias)"
-
-if [ -z ${TMUX+x} ]                        
-then
-	echo "〰〰〰〰〰〰〰〰〰〰〰〰〰"
-else 
-	if [[ -o login ]]; then
-		gim
-	fi
-fi
 
 eval "$(direnv hook zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
