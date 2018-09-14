@@ -6,7 +6,6 @@ then
 fi
 
 if [[ -o login ]]; then
-	gim
 	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -19,6 +18,7 @@ if [[ -o login ]]; then
 
 	export WORKON_HOME=~/.virtualenvs
 	export VIRTUALENVWRAPPER_PYTHON="/Users/nias/.local/venvs/virtualenvwrapper/bin/python"
+	gim
 fi
 
 export EDITOR=/usr/local/bin/vim
