@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end() 
 filetype plugin indent on 

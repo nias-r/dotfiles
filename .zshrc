@@ -29,6 +29,7 @@ alias vim=/usr/local/bin/vim
 if [[ -o login ]]; then
 fi
 
+
 source /Users/nias/dotfiles/scripts/helpful.sh
 source /Users/nias/dotfiles/scripts/bindkeys.sh
 source /Users/nias/dotfiles/scripts/tinycareterm.sh
