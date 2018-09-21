@@ -12,7 +12,7 @@ if [[ -o login ]]; then
 	export NVM_DIR="/Users/nias/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-	export GOPATH="/usr/local/go"
+	export GOPATH="$HOME/go"
 	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.7/bin:/Users/nias/.local/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
