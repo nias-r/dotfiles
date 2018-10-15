@@ -1,7 +1,7 @@
 if [ -z ${TMUX+x} ]                        
 then
 	echo "〰〰〰〰〰〰〰〰〰〰〰〰〰"
-	tmux new-session -A -s general
+	tmux -u new-session -A -s general
 	exit 0
 fi
 
@@ -9,15 +9,20 @@ if [[ -o login ]]; then
 	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-	export NVM_DIR="/Users/nias/.nvm"
+	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 	export GOPATH="$HOME/go"
-	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:/Users/nias/Library/Python/3.7/bin:/Users/nias/.local/bin"
+	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:$HOME/Library/Python/3.7/bin:$HOME/.local/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+	export PATH="$PATH:$HOME/.cargo/bin"
 
 	export WORKON_HOME=~/.virtualenvs
-	export VIRTUALENVWRAPPER_PYTHON="/Users/nias/.local/venvs/virtualenvwrapper/bin/python"
+	export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/venvs/virtualenvwrapper/bin/python"
+
+	export LC_ALL=en_GB.UTF-8
+	export LANG=en_GB.UTF-8
+
 	gim
 fi
 
@@ -30,10 +35,10 @@ if [[ -o login ]]; then
 fi
 
 
-source /Users/nias/dotfiles/scripts/helpful.sh
-source /Users/nias/dotfiles/scripts/bindkeys.sh
-source /Users/nias/dotfiles/scripts/tinycareterm.sh
-source /Users/nias/.antigen.zsh
+source $HOME/dotfiles/scripts/helpful.sh
+source $HOME/dotfiles/scripts/bindkeys.sh
+# source $HOME/dotfiles/scripts/tinycareterm.sh
+source $HOME/.antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -50,35 +55,35 @@ antigen bundle vasyharan/zsh-brew-services
 antigen bundle lukechilds/zsh-better-npm-completion
 
 antigen bundle mafredri/zsh-async
-antigen bundle nias-r/pure
+antigen bundle richardnias/pure
 
 antigen apply
 
 eval "$(thefuck --alias)"
 
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # gcloud
-source /Users/nias/google-cloud-sdk/completion.zsh.inc
-source /Users/nias/google-cloud-sdk/path.zsh.inc
+if [[ -s "$HOME/google-cloud-sdk" ]]; then
+	source $HOME/google-cloud-sdk/completion.zsh.inc
+	source $HOME/google-cloud-sdk/path.zsh.inc
+fi
 
 # aws
 source $HOME/.local/bin/aws_zsh_completer.sh
 
 # virtualenvwrapper
-source /Users/nias/.local/bin/virtualenvwrapper.sh 
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # pipenv
 PIPENV_SHELL_FANCY=true
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
-alias manage="python stash-web/manage.py"
-source ~/.cargo/env
-
 # OPAM configuration
-. /Users/nias/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # GPG config
 export GPG_TTY=$(tty)
+
