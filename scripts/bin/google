@@ -1,1 +1,0 @@
-open -a "/Applications/Google Chrome.app" https://www.google.co.uk/search?q=$1
