@@ -88,3 +88,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # GPG config
 export GPG_TTY=$(tty)
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
