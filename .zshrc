@@ -38,7 +38,6 @@ fi
 
 source $HOME/dotfiles/scripts/helpful.sh
 source $HOME/dotfiles/scripts/bindkeys.sh
-# source $HOME/dotfiles/scripts/tinycareterm.sh
 source $HOME/.antigen.zsh
 
 antigen use oh-my-zsh
