@@ -23,8 +23,10 @@ if [[ -o login ]]; then
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
 
-	export WORKON_HOME=~/.virtualenvs
-	export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/venvs/virtualenvwrapper/bin/python"
+	if [[ -s "$HOME/.local/bin/virualenvwrapper.sh" ]]; then
+		export WORKON_HOME=~/.virtualenvs
+		export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/venvs/virtualenvwrapper/bin/python"
+	fi
 
 	export LC_ALL=en_GB.UTF-8
 	export LANG=en_GB.UTF-8
