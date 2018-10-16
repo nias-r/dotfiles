@@ -1,23 +1,26 @@
-if [ -z ${TMUX+x} ]                        
-then
+if [ -z ${TMUX+x} ]; then 
 	echo "〰〰〰〰〰〰〰〰〰〰〰〰〰"
 	tmux -u new-session -A -s general
 	exit 0
 fi
 
 if [[ -o login ]]; then
-	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM
 
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 	export GOPATH="$HOME/go"
-	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:$HOME/Library/Python/3.7/bin:$HOME/.local/bin"
-	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
-	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
+	export PATH="$PATH:/usr/local/sbin"
+	export PATH="$PATH:$GOPATH/bin"
+	export PATH="$PATH:$HOME/scripts/bin"
+	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+	export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+	export PATH="$PATH:$HOME/.local/bin"
 	export PATH="$PATH:$HOME/.cargo/bin"
 	export PATH="$PATH:$HOME/dotfiles/scripts/bin"
+	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
 
 	export WORKON_HOME=~/.virtualenvs
 	export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/venvs/virtualenvwrapper/bin/python"
@@ -32,10 +35,6 @@ export EDITOR=/usr/local/bin/vim
 export DEFAULT_USER=richardnias
 
 alias vim=/usr/local/bin/vim
-
-if [[ -o login ]]; then
-fi
-
 
 source $HOME/dotfiles/scripts/helpful.sh
 source $HOME/dotfiles/scripts/bindkeys.sh
@@ -88,5 +87,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # GPG config
 export GPG_TTY=$(tty)
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
