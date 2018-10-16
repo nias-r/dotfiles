@@ -15,6 +15,7 @@ if [[ -o login ]]; then
 	export PATH="$PATH:$GOPATH/bin"
 	export PATH="$PATH:$HOME/scripts/bin"
 	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+	export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 	export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 	export PATH="$PATH:$HOME/.local/bin"
 	export PATH="$PATH:$HOME/.cargo/bin"
