@@ -15,6 +15,7 @@ if [[ -o login ]]; then
 	export GOPATH="$HOME/go"
 	export PATH="$PATH:$GOPATH/bin:$HOME/scripts/bin:/usr/local/sbin:$HOME/Library/Python/3.7/bin:$HOME/.local/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
 	export PATH="$PATH:$HOME/.cargo/bin"
 	export PATH="$PATH:$HOME/dotfiles/scripts/bin"
 
