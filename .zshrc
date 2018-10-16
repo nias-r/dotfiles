@@ -74,7 +74,9 @@ fi
 source $HOME/.local/bin/aws_zsh_completer.sh
 
 # virtualenvwrapper
-source $HOME/.local/bin/virtualenvwrapper.sh
+if [[ -s "$HOME/.local/bin/virualenvwrapper.sh" ]]; then
+	source $HOME/.local/bin/virtualenvwrapper.sh
+fi
 
 # pipenv
 PIPENV_SHELL_FANCY=true
