@@ -49,12 +49,12 @@ antigen bundle osx
 antigen bundle command-not-found
 antigen bundle peterhurford/git-it-on.zsh
 antigen bundle andrewferrier/fzf-z
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-
 antigen bundle vasyharan/zsh-brew-services
 antigen bundle lukechilds/zsh-better-npm-completion
-
+antigen bundle mdumitru/fancy-ctrl-z
+antigen bundle caarlos0/zsh-git-sync
 antigen bundle mafredri/zsh-async
 antigen bundle richardnias/pure
 
