@@ -93,3 +93,7 @@ export GPG_TTY=$(tty)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(pyenv init -)"
+
+export FZFZ_SUBDIR_LIMIT=0
+export FZFZ_EXCLUDE_PATTERN="\.(git|stack)"
+export FZF_DEFAULT_COMMAND='fd --type file'
