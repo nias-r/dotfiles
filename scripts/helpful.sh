@@ -2,17 +2,18 @@
 
 h() {
     echo "Custom commands:"
-    echo "bcp       -> brew clean package"
-    echo "bip       -> brew install package"
-    echo "bup       -> brew upgrade package"
-    echo "c         -> \`charm .\`"
-    echo "copy      -> copy from file or stdin"
-    echo "cpw       -> copy password"
-    echo "fbr       -> git checkout branch"
-    echo "fkill     -> kill process by name"
-    echo "fo        -> open file (CTRL-O to use \`open\`)"
-    echo "paste     -> pbpaste"
-    echo "pjson     -> prettify json"
+    echo "bcp           -> brew clean package"
+    echo "bip           -> brew install package"
+    echo "bup           -> brew upgrade package"
+    echo "c             -> \`charm .\`"
+    echo "copy          -> copy from file or stdin"
+    echo "cpw           -> copy password"
+    echo "fbr           -> git checkout branch"
+    echo "fo            -> open file (CTRL-O to use \`open\`)"
+    echo "kill <TAB>    -> kill with fzf"
+    echo "paste         -> pbpaste"
+    echo "pjson         -> prettify json"
+    echo "ssh **<TAB>   -> fuzzy host matching"
 }
 
 alias c='charm .'
@@ -65,16 +66,6 @@ fo() {
 				${EDITOR:-vim} "$file"
 		fi
 	fi
-}
-
-# fkill - kill process
-fkill() {
-    local pid
-    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-    if [[ "x$pid" != "x" ]]; then
-        echo ${pid} | xargs kill -${1:-9}
-    fi
 }
 
 # Install (one or multiple) selected application(s)
