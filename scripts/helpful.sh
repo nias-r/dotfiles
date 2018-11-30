@@ -7,6 +7,7 @@ h() {
     echo "bup       -> brew upgrade package"
     echo "c         -> \`charm .\`"
     echo "copy      -> copy from file or stdin"
+    echo "cpw       -> copy password"
     echo "fbr       -> git checkout branch"
     echo "fkill     -> kill process by name"
     echo "fo        -> open file (CTRL-O to use \`open\`)"
