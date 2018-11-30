@@ -2,6 +2,7 @@
 
 h() {
     echo "Custom commands:"
+    echo "bat           -> better \`cat\`"
     echo "bcp           -> brew clean package"
     echo "bip           -> brew install package"
     echo "bup           -> brew upgrade package"
@@ -21,7 +22,7 @@ alias c='charm .'
 alias pjson='python3 -m json.tool'
 
 cpw() {
-    lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')
+    lpass show -c --password "$(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')"
 }
 
 function copy()
