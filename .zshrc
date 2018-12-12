@@ -14,12 +14,12 @@ if [[ -o login ]]; then
 	export PATH="$PATH:/usr/local/sbin"
 	export PATH="$PATH:$GOPATH/bin"
 	export PATH="$PATH:$HOME/scripts/bin"
-	export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 	export PATH="$PATH:$HOME/.local/bin"
 	export PATH="$PATH:$HOME/.cargo/bin"
 	export PATH="$PATH:$HOME/dotfiles/scripts/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
+	export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
 	if [[ -s "$HOME/.local/bin/virualenvwrapper.sh" ]]; then
 		export WORKON_HOME=~/.virtualenvs
