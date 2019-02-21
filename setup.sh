@@ -21,3 +21,6 @@ curl -L https://get.rvm.io | bash -s stable
 
 # homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# alacritty
+brew cask install alacritty
