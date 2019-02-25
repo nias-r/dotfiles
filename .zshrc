@@ -98,5 +98,4 @@ export FZFZ_SUBDIR_LIMIT=0
 export FZFZ_EXCLUDE_PATTERN="\.(git|stack)"
 export FZF_DEFAULT_COMMAND='fd --type file'
 
-source <(kubectl completion bash)
-source <(docker completion bash)
+source <(kubectl completion zsh)
