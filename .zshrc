@@ -67,8 +67,8 @@ eval "$(thefuck --alias)"
 
 # gcloud
 if [[ -s "$HOME/google-cloud-sdk" ]]; then
-	source $HOME/google-cloud-sdk/completion.zsh.inc
-	source $HOME/google-cloud-sdk/path.zsh.inc
+	source "$HOME/google-cloud-sdk/completion.zsh.inc"
+	source "$HOME/google-cloud-sdk/path.zsh.inc"
 fi
 
 # aws
@@ -99,3 +99,4 @@ export FZFZ_EXCLUDE_PATTERN="\.(git|stack)"
 export FZF_DEFAULT_COMMAND='fd --type file'
 
 source <(kubectl completion zsh)
+source <(helm completion zsh)
