@@ -99,4 +99,6 @@ export FZFZ_EXCLUDE_PATTERN="\.(git|stack)"
 export FZF_DEFAULT_COMMAND='fd --type file'
 
 source <(kubectl completion zsh)
-source <(helm completion zsh | sed -E 's/\["(.+)"\]/\[\1\]/g')
+if type "helm" > /dev/null; then
+	source <(helm completion zsh | sed -E 's/\["(.+)"\]/\[\1\]/g')
+fi
