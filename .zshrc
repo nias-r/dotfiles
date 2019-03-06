@@ -47,6 +47,7 @@ antigen bundle z
 antigen bundle git
 antigen bundle osx
 antigen bundle command-not-found
+antigen bundle docker
 antigen bundle peterhurford/git-it-on.zsh
 antigen bundle andrewferrier/fzf-z
 antigen bundle zdharma/fast-syntax-highlighting
