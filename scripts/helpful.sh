@@ -13,6 +13,7 @@ h() {
     echo "fo            -> open file (CTRL-O to use \`open\`)"
     echo "kill <TAB>    -> kill with fzf"
     echo "paste         -> pbpaste"
+    echo "peng          -> display a notification"
     echo "pjson         -> prettify json"
     echo "ssh **<TAB>   -> fuzzy host matching"
 }
@@ -20,6 +21,10 @@ h() {
 alias c='charm .'
 
 alias pjson='python3 -m json.tool'
+
+peng() {
+    osascript -e 'display notification "" with title "PING"'
+}
 
 cpw() {
     lpass show -c --password "$(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')"
