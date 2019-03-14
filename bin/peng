@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# PING
+
+osascript -e 'display notification "" with title "PING"'

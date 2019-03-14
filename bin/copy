@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# better pbcopy
+
+if [[ -t 0 ]]; then
+    cat "$@" | pbcopy
+else
+    pbcopy < /dev/stdin
+fi

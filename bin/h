@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# list my custom commands
+
+echo "Custom commands:"
+echo "bat           -> better \`cat\`"
+echo "bcp           -> brew clean package"
+echo "bip           -> brew install package"
+echo "bup           -> brew upgrade package"
+echo "c             -> \`charm .\`"
+echo "copy          -> copy from file or stdin"
+echo "cpw           -> copy password"
+echo "fbr           -> git checkout branch"
+echo "fo            -> open file (CTRL-O to use \`open\`)"
+echo "kill <TAB>    -> kill with fzf"
+echo "paste         -> pbpaste"
+echo "peng          -> display a notification"
+echo "pjson         -> prettify json"
+echo "ssh **<TAB>   -> fuzzy host matching"

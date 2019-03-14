@@ -16,7 +16,7 @@ if [[ -o login ]]; then
 	export PATH="$PATH:$HOME/scripts/bin"
 	export PATH="$PATH:$HOME/.local/bin"
 	export PATH="$PATH:$HOME/.cargo/bin"
-	export PATH="$PATH:$HOME/dotfiles/scripts/bin"
+	export PATH="$PATH:$HOME/dotfiles/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
 	export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
@@ -37,7 +37,6 @@ export DEFAULT_USER=richardnias
 
 alias vim=/usr/local/bin/vim
 
-source $HOME/dotfiles/scripts/helpful.sh
 source $HOME/dotfiles/scripts/bindkeys.sh
 source $HOME/.antigen.zsh
 
