@@ -44,6 +44,7 @@ antigen use oh-my-zsh
 
 antigen bundle z
 antigen bundle git
+antigen bundle mercurial
 antigen bundle osx
 antigen bundle command-not-found
 antigen bundle docker
