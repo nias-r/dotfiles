@@ -5,11 +5,6 @@ if [ -z ${TMUX+x} ]; then
 fi
 
 if [[ -o login ]]; then
-	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM
-
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 	export GOPATH="$HOME/go"
 	export PATH="$PATH:/usr/local/sbin"
 	export PATH="$PATH:$GOPATH/bin"
@@ -19,7 +14,6 @@ if [[ -o login ]]; then
 	export PATH="$PATH:$HOME/dotfiles/bin"
 	export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 	export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
-	export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
 	if [[ -s "$HOME/.local/bin/virualenvwrapper.sh" ]]; then
 		export WORKON_HOME=~/.virtualenvs
@@ -46,7 +40,6 @@ antigen bundle z
 antigen bundle git
 antigen bundle mercurial
 antigen bundle osx
-antigen bundle command-not-found
 antigen bundle docker
 antigen bundle peterhurford/git-it-on.zsh
 antigen bundle andrewferrier/fzf-z
@@ -58,13 +51,14 @@ antigen bundle mdumitru/fancy-ctrl-z
 antigen bundle caarlos0/zsh-git-sync
 antigen bundle mafredri/zsh-async
 antigen bundle richardnias/pure
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
 
 antigen apply
 
 eval "$(thefuck --alias)"
 
 # eval "$(direnv hook zsh)"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # gcloud
 if [[ -s "$HOME/google-cloud-sdk" ]]; then
