@@ -12,6 +12,7 @@ ln -sf ~/.tmux/.tmux.conf ~/.tmux.conf
 
 # link
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.zlogin ~/.zlogin
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
 
@@ -21,6 +22,3 @@ curl -L https://get.rvm.io | bash -s stable
 
 # homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# alacritty
-brew cask install alacritty
