@@ -14,6 +14,7 @@ export PATH="$PATH:$HOME/dotfiles/bin"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # gcloud
 if [[ -s "$HOME/google-cloud-sdk" ]]; then
