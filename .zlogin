@@ -19,6 +19,7 @@ export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
 
 # gcloud
 if [[ -s "$HOME/google-cloud-sdk" ]]; then
+    export CLOUDSDK_PYTHON=python3
 	source "$HOME/google-cloud-sdk/completion.zsh.inc"
 	source "$HOME/google-cloud-sdk/path.zsh.inc"
 fi
