@@ -25,7 +25,7 @@ if [[ -s "$HOME/google-cloud-sdk" ]]; then
 fi
 
 # aws
-source $HOME/.local/bin/aws_zsh_completer.sh
+[ -f "$HOME/.local/bin/virualenvwrapper.sh" ] && source $HOME/.pyenv/versions/3.6.8/bin/aws_zsh_completer.sh
 
 if [[ -s "$HOME/.local/bin/virualenvwrapper.sh" ]]; then
     source $HOME/.local/bin/virtualenvwrapper.sh
