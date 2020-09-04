@@ -46,6 +46,10 @@ if type "helm" > /dev/null; then
 	source <(helm completion zsh | sed -E 's/\["(.+)"\]/\[\1\]/g')
 fi
 
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
+
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 
