@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+trap 'echo "FAILED!"' ERR
 
 function logdate() {
 		/usr/local/bin/gdate $* 2> /dev/null || date
