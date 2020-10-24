@@ -1,5 +1,5 @@
 export EDITOR=/usr/local/bin/vim
-export DEFAULT_USER=richardnias
+export DEFAULT_USER=`whoami`
 
 alias vim=/usr/local/bin/vim
 
