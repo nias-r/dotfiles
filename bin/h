@@ -3,7 +3,6 @@
 # list my custom commands
 
 echo "Custom commands:"
-echo "bat           -> better \`cat\`"
 echo "bcp           -> brew clean package"
 echo "bip           -> brew install package"
 echo "bup           -> brew upgrade package"
